@@ -1,0 +1,19 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Publisher</h1>
+    <img src="{%static 'catc.jpg' %}"/>
+    <ul>
+    {%for each_publisher in all_publishers%}
+    <li>{{each_publisher.name}} / {{each_publisher.email}} <a href="{%url 'update_publisher_route' publisher_id=each_publisher.id%}">Edit</a></li>
+    {%endfor%}
+    </ul>
+</body>
+</html>
